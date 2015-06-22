@@ -10,6 +10,8 @@ from instructions.j_type import JType
 from instructions.r_type import RType
 from instructions.i_type import IType
 
+import array
+
 
 # The main assembler application.
 class Assembler(object):
@@ -79,11 +81,13 @@ class Assembler(object):
     def _write_output(self, f):
         for address in sorted(self.program):
             mem = self.program[address]
-            f.write("{0:08x}: {1} # {2}\n".format(
-                address,
-                mem.output_string(),
-                mem.description()
-            ))
+            f.write(
+              # "{0:08x}: {1} # {2}\n".format(
+              #  address,
+              #  mem.output_string(),
+              #  mem.description()
+              (mem.output_string().decode('hex'))
+            )
 
     # Applies a directive to the assembler state.
     # Input:
