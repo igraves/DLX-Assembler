@@ -1,0 +1,16 @@
+main:
+  addi r2, r2, 1024
+  sw 0(r0), r2
+  lw r1, 0(r0)
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
